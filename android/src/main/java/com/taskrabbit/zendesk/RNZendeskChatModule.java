@@ -11,6 +11,7 @@ import com.facebook.react.bridge.ReadableMap;
 import com.zopim.android.sdk.api.ZopimChat;
 import com.zopim.android.sdk.model.VisitorInfo;
 import com.zopim.android.sdk.prechat.ZopimChatActivity;
+import com.zopim.android.sdk.prechat.EmailTranscript;
 
 import java.lang.String;
 
@@ -48,7 +49,8 @@ public class RNZendeskChatModule extends ReactContextBaseJavaModule {
 
     @ReactMethod
     public void init(String key) {
-        ZopimChat.init(key);
+        ZopimChat.init(key)
+            .emailTranscript(EmailTranscript.DISABLED);
     }
 
     @ReactMethod
